@@ -20,7 +20,7 @@ Toutes les fonctions sont créées dans App.js. Celle-ci sont ensuite passée en
     de la librairie ```react-transition-group```).\
     ETAPE DE REALISATION => createItem() appelée via un onClick() sur le bouton de création, elle prend en paramètre le nom rentré dans le input => le state ```tasklist```
     est mis à jour via un setState() une fois l'ajout réalisé, le state ```inProp``` est set à true pour jouer l'animation d'ajout du nouveau composant ```TaskItem```.\
-    Une boucle map est utilisé pour boucler sur le state "tasklist" qui est passé en props au composant TaskList pour qu'il affiche toute les tâches ajoutées.\
+    Une boucle map est utilisé pour boucler sur le state "tasklist" qui est passé en props au composant TaskList pour qu'il affiche toute les tâches ajoutées.
 
 ### Modification
 
@@ -31,7 +31,7 @@ Toutes les fonctions sont créées dans App.js. Celle-ci sont ensuite passée en
     Les boutons "Rename" et "Delete" sont des composants ajoutés grâce au framework Material UI. Le bouton de validation est lui fait en pur.\
 **Implémentation :**
     Le bouton "Rename" va appeler une fonction ```setEditItem``` qui prend l'id de la tache en paramètre, quand cette fonction est appelée le state "isEditing" va être mis à 1 et "taskToEdit" va prendre l'id de la tache en valeur, ce qui permet d'afficher le composant ```EditItem``` sur le bon composant ```TaskItem```. Une fois que le composant est disponnible, si l'on valide l'action la fonction ```editItem``` va être appelé elle prendre en paramètre la valeur de l'input et l'id de l'élément. La fonction va faire
-    une recherche dans le state ```tasklist``` via l'id fournit en paramètre pour aller modifier le nom de l'élément donné en paramètre. Une fois celà finis le state ```taskList``` va être mis à jour avec la nouvelle valeur et le state ```isEditing: 0``` va repasser à zéro pour masquer le composant ```EditItem```.\
+    une recherche dans le state ```tasklist``` via l'id fournit en paramètre pour aller modifier le nom de l'élément donné en paramètre. Une fois celà finis le state ```taskList``` va être mis à jour avec la nouvelle valeur et le state ```isEditing: 0``` va repasser à zéro pour masquer le composant ```EditItem```.
       
 ### Suppression
 
@@ -40,11 +40,11 @@ Toutes les fonctions sont créées dans App.js. Celle-ci sont ensuite passée en
 **Animation :**
     Le framework material UI est utilisé pour la fluidité du bouton "Delete", la librairie ```react-transition-group``` est utilisée pour l'animation de disparition.\
 **Implémentation :**
-    Le bouton "Delete" va appeler la fonction ```deleteItem``` en lui passant en paramètre l'id de la tache à supprimer. Une recherche avec findIndex sur le state ```tasklist``` va être effectuée pour trouver l'élément à supprimer, il est supprimé avec la fonction splice. Le state ```tasklist``` est ensuite remis à jour et le state ```inProp``` est remis à false car l'animation de suppression a finit d'être jouée.\
+    Le bouton "Delete" va appeler la fonction ```deleteItem``` en lui passant en paramètre l'id de la tache à supprimer. Une recherche avec findIndex sur le state ```tasklist``` va être effectuée pour trouver l'élément à supprimer, il est supprimé avec la fonction splice. Le state ```tasklist``` est ensuite remis à jour et le state ```inProp``` est remis à false car l'animation de suppression a finit d'être jouée.
 
 ### Test
 Nous avons réalisé un test pour vérifier que notre composant principal App fonctionne correctement.
-La librairie utilisé est React Testing Library, qui est présente par défaut avec React.\
+La librairie utilisé est React Testing Library, qui est présente par défaut avec React.
 
 ## Getting Started with Create React App
 

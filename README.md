@@ -1,4 +1,17 @@
-# ToDoList React course ESTIAM
+# ToDoList React • Groupe Hojatxona
+
+## Présentation
+
+Todo list en React avec une animation pour chaque element interactif.
+Projet réalisé dans le cadre du cours de développement Front avancée.
+
+## Fonctionnalités
+### Ajout
+
+### Modification
+### Suppression
+
+## Test
 
 ## Getting Started with Create React App
 

@@ -1,0 +1,11 @@
+.valid_edit_btn {
+    transition: ease 0.8s !important;
+}
+.valid_edit_btn:hover {
+    transform: rotate3d(0, 2, 0, 360deg);
+    background-color: #71df59;
+}
+
+.edit_view {
+    transition: ease 1s;
+}

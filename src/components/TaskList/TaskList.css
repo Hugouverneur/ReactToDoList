@@ -7,19 +7,16 @@
 }
 
 .tasklist_item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     background-color: #a3d2ca50;
     border-radius: 4px;
     margin: 8px 24px;
+    padding: 0px 24px;
 }
 
 .tasklist_item * {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -42,8 +39,9 @@ input:focus {
     border: solid 2px #86ada6;
 }
 
-.edit_view {
-    display: none;
+.valid_btn:hover {
+    transform: rotate(90deg);
+    background-color: #7ebb68;
 }
 
 .additem-enter {
@@ -56,11 +54,32 @@ input:focus {
     transform:translateY(0);
     transition: opacity 300ms, transform 300ms;
 }
+
 .additem-exit {
     opacity: 1;
     transform:translateY(0);
 }
 .additem-exit-active {
+    opacity: 0;
+    transform:translateY(-100%);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.edititem-enter {
+    opacity: 0;
+    transform:translateY(100%);
+}
+
+.edititem-enter-active {
+    opacity: 1;
+    transform:translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.edititem-exit {
+    opacity: 1;
+    transform:translateY(0);
+}
+.edititem-exit-active {
     opacity: 0;
     transform:translateY(-100%);
     transition: opacity 300ms, transform 300ms;

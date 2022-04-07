@@ -1,9 +1,9 @@
 import './TaskList.css';
-import React, { useState } from 'react';
-import {Transition, CSSTransition, SwitchTransition, TransitionGroup} from "react-transition-group";
+import React from 'react';
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 import TaskItem from '../TaskItem/TaskItem'
 
-const TaskList = (props) => {
+const TaskList = (props) => { 
     return(
         <div className="tasklist_block">
             <h2>My tasks list</h2>
@@ -11,7 +11,7 @@ const TaskList = (props) => {
                     {(props.taskList).map((element, index) => {
                         return(
                             <CSSTransition key={index} in={props.inProp} timeout={500} classNames="additem">
-                                <TaskItem key={index} inProp={props.inProp} element={element} deleteItem={props.deleteItem} editItem={props.editItem} setEditItem={props.setEditItem}></TaskItem>
+                                <TaskItem inProp={props.inProp} element={element} deleteItem={props.deleteItem} editItem={props.editItem} isEditing={props.isEditing} setEditItem={props.setEditItem} taskToEdit={props.taskToEdit}></TaskItem>
                             </CSSTransition>
                         )
                     })}
@@ -21,7 +21,7 @@ const TaskList = (props) => {
                 <button 
                 onClick={()=>{
                     props.createItem(document.getElementById('taskinput').value);
-                }} className="material-icons-round">add_circle_outline</button>
+                }} className="material-icons-round valid_btn">add_circle_outline</button>
             </div>
         </div>
     );

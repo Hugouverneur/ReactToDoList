@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import TaskList from './components/TaskList/TaskList'
 import './App.css';
@@ -41,6 +40,10 @@ class App extends Component {
   setEditItem = (elementId) => {
     document.getElementsByName('editview'+elementId)[0].style.display = "flex"
     document.getElementsByName('defaultview'+elementId)[0].style.display = "none"
+
+    this.setState({
+      inProp: true
+    })
   }
 
   editItem = (taskid, taskname) => {
@@ -51,18 +54,19 @@ class App extends Component {
     }
 
     this.setState({
-      taskList: taskList
+      taskList: taskList,
+
     })
 
     document.getElementsByName('editview'+taskid)[0].style.display = "none"
     document.getElementsByName('defaultview'+taskid)[0].style.display = "flex"
   }
 
-  render() {
+  render() {              
     return(
       <div className="App">
         <h1>ToDoList</h1>
-          <TaskList key="tasklistblock" inProp={this.state.inProp} taskList={this.state.tasklist} createItem={this.createItem} editItem={this.editItem} deleteItem={this.deleteItem} setEditItem={this.setEditItem}></TaskList>
+          <TaskList createItem={this.createItem} taskList={this.state.tasklist} deleteItem={this.deleteItem} editItem={this.editItem} setEditItem={this.setEditItem}></TaskList>
       </div>
     )
   }
